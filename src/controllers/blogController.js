@@ -41,7 +41,7 @@ const getData = async function (req, res) {
 
 
         if (!title && !category && !tags && !subcategory && authorId) {
-            let data = await BlogModel.find({ $or: [{ isDeleted: false, isPublished: true }, { isDeleted: false, authorId: authorId, isDeleted: false }] })
+            let data = await BlogModel.find({ $or: [{ isDeleted: false, isPublished: true }, { authorId: authorId, isDeleted: false }] })
 
             if (data.length <= 0) {
                 return res.status(404).send({ status: false, msg: "Data Not Found" })

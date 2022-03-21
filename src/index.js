@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-mongoose.connect(DB, {
+mongoose.connect("mongodb+srv://Datta-database:D3443t1432@cluster0.y648p.mongodb.net/BackendProject1?retryWrites=true&w=majority", {
     useNewUrlParser: true
 })
     .then(() => console.log("MongoDb is connected"))
